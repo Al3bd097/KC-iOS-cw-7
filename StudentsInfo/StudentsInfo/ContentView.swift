@@ -9,16 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(students){ student in
-                    Text("\(student.fullName) \(student.Year) \(student.age)")
-                    
-                }
+        
+        VStack {
+            Image("id")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 400, height: 300)
+            List {
+                    ForEach(students){ student in
+                        Text("\(student.fullName) \n \(student.Year) \n \(student.age) \n")
+                            .padding()
+                            Divider()
+                        
+                    }
             }
+            .frame(width: 400, height: 500)
+        }
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
